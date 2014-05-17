@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Converter (Zawgyi <> Unicode)</title>
+    <style type="text/css">
+        #destfont
+        {
+            width: 145px;
+            height: 34px;
+        }
+        .style9
+        {
+            width: 147px;
+            height: 26px;
+		color: #000080;
+		font-size: small;
+	}
+        .style10
+        {
+            width: 481px;
+            height: 26px;
+        }
+        .style11
+        {
+            height: 26px;
+        }
+        #Select1
+        {
+            width: 141px;
+            margin-left: 0px;
+        }
+        #Submit1
+        {
+            width: 105px;
+        }
+        .style19 {
+		width: 147px;
+	}
+    </style>
+</head>
+ <SCRIPT language="JavaScript" SRC="scripts/zg12uni51.js"></SCRIPT>
+ <SCRIPT language="JavaScript" SRC="scripts/uni512zg1.js"></SCRIPT>  
+<script>window.resizeTo(640,480);</script>
+ <script type=text/javascript>
+
+
+function Convert()
+
+{
+var type=document.getElementById("Select1").value;
+var input=document.getElementById("TextArea1").value;
+var result;
+   switch (type)
+   {      
+   case "m3" :
+		document.getElementById("TextArea1").style.fontFamily="Myanmar3, Parabaik, Padauk;";
+    	result = Z1_Uni(input);
+        break;  
+   case "zg1" :
+      	document.getElementById("TextArea1").style.fontFamily="Zawgyi-One";
+        result = Uni_Z1(input);
+        break;         
+   default :
+        break;
+   }
+
+
+
+document.getElementById("TextArea1").value=result;
+
+}
+</script>
+<body style="margin: 0" bgcolor="#C0C0C0">
+<table style="width:100%; font-weight: bold; font-size: x-large; text-transform: capitalize; position: absolute; top: 0; z-index: inherit;" bgcolor="#C0C0C0">
+                        <tr style="color: #0000FF">
+                        <td class="style9" style="width: 318px;">
+                            Enabled by
+							<a href="http://www.solvewaresolution.net">Solveware 
+							Solution</a></td>
+                        <td class="style10" align ="right" 
+                            style="font-style: normal; font-weight: normal; font-size: medium; width: 190px;" >
+                        &nbsp;&nbsp;Select Target Encoding :</td>
+                        <td class="style11" align ="right" >
+                            <select id="Select1" name="D1" onchange="Convert()" style="color: #000000">
+                               <option selected="">Select Encoding</option>
+            <option value="zg1">Zawgyi</option>        
+            <option value="m3">Unicode</option>
+            
+                            </select></td>
+                    </tr>
+                    <tr style="color: #0000FF">
+                        <td class="style19" style="color: #000080; height: 26px;" colspan="3">
+						<textarea id="TextArea1" name="S1" style="color: #000080; width: 590px; height: 375px;"></textarea></td>
+                            &nbsp;</td>
+                        
+                    </tr>
+                </table>
+</body>
+</html>
